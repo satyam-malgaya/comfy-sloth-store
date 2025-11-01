@@ -1,0 +1,63 @@
+body {
+    /* background-color: #181A1B; */
+    font-family: "Lato", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Edu+SA+Hand:wght@400..700&family=Hachi+Maru+Pop&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+.category-link {
+    position: relative;
+    display: inline-block;
+    /* ✅ restricts underline width to text */
+    font-size: 14px;
+    width: fit-content;
+    color: #8E877A;
+    letter-spacing: 1px;
+    line-height: 25px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding-bottom: 2px;
+    overflow: hidden;
+    /* small space between text and underline */
+}
+
+.category-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #875c43;
+    transition: width 0.3s ease;
+}
+
+.category-link:hover {
+    color: #875c43;
+}
+
+.category-link:hover::before {
+    width: 100%;
+}
+
+.category-link {
+    align-self: flex-start;
+}
+
+.category-link.active {
+    color: #fff;
+}
+
+.category-link.active::before {
+    width: 100%;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for Firefox */
+
+.scrollbar-hidden {
+    scrollbar-width: none;
+}
