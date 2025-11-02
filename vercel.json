@@ -1,9 +1,0 @@
-{
-    "buildCommand": "cd k72 && npm run build",
-    "outputDirectory": "k72/dist",
-    "installCommand": "cd k72 && npm install",
-    "rootDirectory": "k72",
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/index.html" }
-    ]
-}
