@@ -10,7 +10,8 @@ const Product = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedCompany, setSelectedCompany] = useState("all");
   const [selectedColor, setSelectedColor] = useState("all");
-  
+  const [ishover , setishover]=useState(null)
+  const [state,setstate]=useState(true)
   const colors = [
     { value: "all", color: "" },
     { value: "red", color: "red" },
@@ -18,6 +19,18 @@ const Product = () => {
     { value: "green", color: "green" },
     { value: "black", color: "black" },
   ];
+
+  const EnterHandle = (index) => {
+    const newstate = [...ishover];
+    newstate[index] = true;
+    setishover(newstate);
+  };
+
+  const LeaveHanlder = (index) => {
+    const newstate = [...ishover];
+    newstate[index] = false;
+    setishover(newstate);
+  };
 
   // const filterdata = activeCategory==='All' ?data:data.filter((item)=>item.category === activeCategory)
   const filterdata = data.filter((item) => {
@@ -128,7 +141,7 @@ const Product = () => {
                         ? "text-sm sm:text-[15px] text-[#CECAC3]" 
                         : "w-4 h-4 sm:w-4 sm:h-4 rounded-full"
                     } ${
-                      selectedColor === c.value ? "ring-2 ring-[#FF5733]" : ""
+                      selectedColor === c.value ? "":""
                     }`}
                     style={{ backgroundColor: c.color }}
                   >
@@ -187,10 +200,12 @@ const Product = () => {
           {/* section first......................... */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-10 px-1 items-start sm:items-center mb-4">
             <div className="flex flex-row gap-2">
-              <button className="text-white px-[1.5px] py-[1.5px] rounded-sm border-1 border-white">
+              <button onClick={()=>{setstate(false)}} className="text-white px-[1.5px] py-[1.5px] rounded-sm border-1 border-white">
                 <PiSquaresFourFill />
               </button>
-              <button className="text-white px-[1.5px] py-[1.5px] rounded-sm border-1 border-white">
+              <button 
+                 onClick={()=>{setstate(true)}}
+              className="text-white px-[1.5px] py-[1.5px] rounded-sm border-1 border-white">
                 <CiMenuBurger />
               </button>
             </div>
@@ -219,18 +234,43 @@ const Product = () => {
           </div>
           {/* section second....................... */}
           <div className="w-full min-h-[70vh] sm:min-h-[70vh] lg:h-[100vh] overflow-y-auto scrollbar-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 px-1 sm:px-2 pt-4 sm:pt-6 lg:pt-7">
-              {filterdata.map((item, key) => {
-                return (
-                  <div key={key} className="w-full">
-                    <div className="w-full rounded-sm h-[25vh] sm:h-[28vh] lg:h-[30vh]">
+            {/* starting for flex-row sume */}
+           {
+            state ? (
+            <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6">
+               {filterdata.map((item,key)=>{
+                return <div key={key} className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6  sm:bg-transparent p-3 sm:p-0 rounded-sm sm:rounded-none">
+                      <div className={`w-full sm:w-[40%] lg:w-[35%] xl:w-[30%] rounded-sm h-[30vh] sm:h-[28vh] md:h-[32vh] lg:h-[35vh] flex-shrink-0 ${ishover=== key  ? "bg-black bg-opacity-70":""}`}>
                       <img
                         className="w-full h-full rounded-sm object-cover object-center overflow-hidden"
                         src={item.mainImg}
                         alt="sorry the image not avalabel"
                       />
                     </div>
-                    <div className="flex justify-between items-center px-1 sm:px-2 pt-2 sm:pt-3">
+                    <div className="flex flex-col items-start justify-center gap-2 sm:gap-2.5 lg:gap-3 sm:pl-4 lg:pl-6 xl:pl-10 pt-0 sm:pt-2 lg:pt-3 flex-1">
+                         <h1 className="text-lg xs:text-xl sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.4rem] font-bold tracking-[1px] text-[#CECAC3] leading-tight">{item.h1}</h1>
+                         <p className="text-[#815A44] text-base sm:text-[0.95rem] md:text-[1rem] font-bold">{item.price}</p>
+                         <p className="line-clamp-2 sm:line-clamp-3 text-balance text-sm sm:text-[14px] md:text-[15px] text-[#9FBAD0] leading-relaxed">{item.pere}</p>
+                         <button className="text-xs sm:text-[12px] md:text-[13px] px-4 sm:px-5 py-1.5 sm:py-1.5 md:py-2 rounded-sm bg-amber-700 hover:bg-amber-800 transition-colors mt-1 sm:mt-0">Details</button>
+                    </div>
+                </div>
+               })}          
+            </div>):( <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 px-1 sm:px-2 pt-4 sm:pt-6 lg:pt-7">
+              {/* second filterration  */}
+              {filterdata.map((item, key) => { 
+                return (
+                  <div 
+                  onMouseEnter={()=>EnterHandle(key)}
+                  onMouseLeave={()=>LeaveHanlder(null)}
+                  key={key} className="w-full">
+                    <div className={`w-full rounded-sm h-[25vh] sm:h-[28vh] lg:h-[30vh] ${ishover=== key  ? "bg-black bg-opacity-70":""}`}>
+                      <img
+                        className="w-full h-full rounded-sm object-cover object-center overflow-hidden"
+                        src={item.mainImg}
+                        alt="sorry the image not avalabel"
+                      />
+                    </div>
+                    <div className="flex justify-between it ems-center px-1 sm:px-2 pt-2 sm:pt-3">
                       <h4 className="text-[#999183] text-sm sm:text-base truncate pr-2">
                         {item.h1}
                       </h4>
@@ -241,7 +281,9 @@ const Product = () => {
                   </div>
                 );
               })}
-            </div>
+            </div>)
+           }
+
           </div>
         </div>
       </div>

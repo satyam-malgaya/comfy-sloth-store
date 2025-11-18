@@ -1,4 +1,6 @@
 import { FaStar } from "react-icons/fa";
+import { TbSearch } from "react-icons/tb";
+
 // https://react-course-comfy-sloth-store.netlify.app/products
 // export const colors [= [
 //     { value: "all", color: "", label: "All" },
@@ -13,6 +15,7 @@ const data = [
   {
     id: 1,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['blue'],
      company: "marcos",
     mainImg: "https://www.course-api.com/images/store/product-12.jpeg",
@@ -36,6 +39,7 @@ const data = [
   {
     id: 2,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['red'],
      company: "marcos",
     mainImg: "https://www.course-api.com/images/store/product-4.jpeg",
@@ -59,6 +63,7 @@ const data = [
   {
     id: 3,
     category: "Kitchen",
+    hoverImg:(<TbSearch />),
     colors:['brown'],
      company: "marcos",
     company: "marcos",
@@ -83,6 +88,7 @@ const data = [
   {
     id: 4,
     category: "Bedroom",
+    hoverImg:(<TbSearch />),
     colors:['red'],
      company: "marcos",
     company: "marcos",
@@ -107,6 +113,7 @@ const data = [
   {
     id: 5,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['blue'],
      company: "caressa",
     company: "liddy",
@@ -131,6 +138,7 @@ const data = [
   {
     id: 6,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['brown'],
      company: "marcos",
     company: "ikea",
@@ -155,8 +163,10 @@ const data = [
   {
     id:7 ,
     category: "Kitchen",
+    hoverImg:(<TbSearch />),
     colors:['green'],
      company: "caressa",
+     
     mainImg: "https://www.course-api.com/images/store/product-6.jpeg",
     sideImge1: "https://www.course-api.com/images/store/extra-product-1.jpeg",
     sideImge2: "https://www.course-api.com/images/store/extra-product-2.jpeg",
@@ -178,6 +188,7 @@ const data = [
   {
     id: 8,
     category: "Kids",
+    hoverImg:(<TbSearch />),
     colors:['green'],
      company: "caressa",
     mainImg: "https://www.course-api.com/images/store/product-11.jpeg",
@@ -201,6 +212,7 @@ const data = [
   {
     id:9 ,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['blue'],
      company: "liddy",
     mainImg: "https://www.course-api.com/images/store/product-8.jpeg",
@@ -224,6 +236,7 @@ const data = [
   {
     id: 10,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['red'],
      company: "liddy",
     mainImg: "https://www.course-api.com/images/store/product-21.jpeg",
@@ -247,6 +260,7 @@ const data = [
   {
     id: 11,
     category: "Dining",
+    hoverImg:(<TbSearch />),
     colors:['brown'],
      company: "liddy",
     mainImg: "https://www.course-api.com/images/store/product-5.jpeg",
@@ -270,6 +284,7 @@ const data = [
   {
     id:12 ,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['black'],
      company: "ikea",
     mainImg: "https://www.course-api.com/images/store/product-8.jpeg",
@@ -293,6 +308,7 @@ const data = [
   {
     id: 13,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['brown'],
      company: "ikea",
     mainImg: "https://www.course-api.com/images/store/product-7.jpeg",
@@ -316,6 +332,7 @@ const data = [
   {
     id: 14,
     category: "Living Room",
+    hoverImg:(<TbSearch />),
     colors:['red'],
      company: "ikea",
     mainImg: "https://www.course-api.com/images/store/product-17.jpeg",
@@ -339,6 +356,7 @@ const data = [
   {
     id:15 ,
     category: "Kitchen",
+    hoverImg:(<TbSearch />),
     colors:['black'],
      company: "caressa",
     mainImg: "https://www.course-api.com/images/store/product-10.jpeg",
@@ -362,6 +380,7 @@ const data = [
   {
     id:16 ,
     category: "Bedroom",
+    hoverImg:(<TbSearch />),
     colors:['brown'],
      company: "caressa",
     mainImg: "https://www.course-api.com/images/store/product-2.jpeg",
@@ -385,6 +404,7 @@ const data = [
   {
     id: 17,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['blue'],
      company: "liddy",
     mainImg: "https://www.course-api.com/images/store/product-14.jpeg",
@@ -408,6 +428,7 @@ const data = [
   {
     id:18 ,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['green'],
      company: "liddy",
     mainImg: "https://www.course-api.com/images/store/product-18.jpeg",
@@ -431,6 +452,7 @@ const data = [
   {
     id:19 ,
     category: "Bedroom",
+    hoverImg:(<TbSearch />),
     colors:['black'],
      company: "ikea",
     mainImg: "https://www.course-api.com/images/store/product-15.jpeg",
@@ -454,6 +476,7 @@ const data = [
   {
     id:20 ,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['red'],
      company: "caressa",
     mainImg: "https://www.course-api.com/images/store/product-20.jpeg",
@@ -477,6 +500,7 @@ const data = [
   {
     id:21 ,
     category: "Kitchen",
+    hoverImg:(<TbSearch />),
     colors:['black'],
      company: "caressa",
     mainImg: "https://www.course-api.com/images/store/product-22.jpeg",
@@ -500,6 +524,7 @@ const data = [
   {
     id: 22,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['blue'],
      company: "marcos",
     mainImg: "https://www.course-api.com/images/store/product-19.jpeg",
@@ -523,6 +548,7 @@ const data = [
   {
     id:23 ,
     category: "Office",
+    hoverImg:(<TbSearch />),
     colors:['green'],
      company: "marcos",
     mainImg: "https://www.course-api.com/images/store/product-3.jpeg",

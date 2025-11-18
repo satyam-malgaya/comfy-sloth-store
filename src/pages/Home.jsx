@@ -68,11 +68,11 @@ const Home = () => {
                 onMouseLeave={rotateoutHandler}
                 className="uppercase px-5 py-3 rounded-full bg-[#AB7B60] text-white tracking-wide text-sm sm:text-base flex gap-2 items-center shadow-md hover:shadow-lg transition-shadow duration-200"
               >
-                shop now
+                shop now {" "}
                 <span
                   ref={rotate}
                   className={`inline-block transition-transform duration-300 ${
-                    show ? "translate-x-6" : "translate-x-0"
+                    show ? "translate-x-6 rotate-90" : "translate-x-0"
                   }`}
                 >
                   <BsFillArrowUpCircleFill size={20} />
@@ -196,7 +196,7 @@ const Home = () => {
               return <div key={key} className="w-full sm:w-[45%] md:w-[35%] lg:w-[30%] flex items-center justify-center gap-3 sm:gap-4 md:gap-5 px-4 sm:px-6 md:px-8 lg:px-10 flex-col h-auto sm:h-80 md:h-82 rounded-sm bg-[#815A44] py-6 sm:py-4">
                 <div className="px-3 sm:px-4 py-3 sm:py-4 bg-[#39281E] rounded-full">{item.icon}</div>
                 <div className="text-[#CECAC3] text-[1.2rem] sm:text-[1.3rem] md:text-[1.4rem] lg:text-[1.5rem] font-bold tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px] text-center">{item.h1}</div>
-                <div className="text-center text-[#634634] text-[14px] sm:text-[15px] md:text-[16px] leading-6 sm:leading-7">
+                <div className="text-center text-[#CECAC3] text-[14px] sm:text-[15px] md:text-[16px] leading-6 sm:leading-7">
                  {
                   item.p
                  }

@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
-
+import Card from './pages/Card'
 const App = () => {
   return (
     <>
@@ -16,6 +16,7 @@ const App = () => {
         <Route path="/home" element={<Home />} caseSensitive />     {/* Optional: duplicate home path */}
         <Route path="/about" element={<About />} caseSensitive />
         <Route path="/product" element={<Product />} caseSensitive />
+        <Route path="/card" element={<Card />} />
       </Routes>
     </>
   );
